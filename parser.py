@@ -42,8 +42,6 @@ def parse():
             print(f'Парсинг страницы {page} из {pages_count}...')
             html = get_html(URL, params={'page': page})
             work.extend(get_content(html.text))
-
-
         pages_list = []
         for pag in range(1, pages_count*15 - 13):
             if 'Кипр' in work[pag].get('City') and 595 > work[pag].get('Price') > 550:
@@ -51,5 +49,7 @@ def parse():
         print(pages_list)
     else:
         print('Error')
+        print('Hello')
+
 
 parse()
